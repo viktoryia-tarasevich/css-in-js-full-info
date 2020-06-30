@@ -29,6 +29,8 @@ During the preparation for a meetup, I've collected lots of interesting resource
 
 # Docs
 
+## Css in Js libraries
+
 * [Styled Components](https://styled-components.com/docs)
 * [JSS](https://cssinjs.org/)
 * [Emotion](https://emotion.sh/docs/introduction)
@@ -36,3 +38,10 @@ During the preparation for a meetup, I've collected lots of interesting resource
 * [Reshadow](https://reshadow.dev/)
 * [Astroturf](https://github.com/4Catalyzer/astroturf)
 * [Compiled](https://compiledcssinjs.com/)
+
+## Css preprocessors
+
+* [LESS](http://lesscss.org/)
+* [SASS](https://sass-lang.com/)
+* [Stylus](https://stylus-lang.com/)
+* [PostCSS](https://postcss.org/)
