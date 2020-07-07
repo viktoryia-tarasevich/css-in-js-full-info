@@ -24,6 +24,7 @@ During the preparation for a meetup, I've collected lots of interesting resource
 
 * [Maya Shavin — CSS in JS - The good, The bad and The ugly](https://www.youtube.com/watch?v=ddxkp6C_gaE)
 * [Sarrah Vesselov — How to style in React and not lose friends](https://www.youtube.com/watch?v=V-flI7ui52M)
+* [Max Stoiber - See the Past, Present, and Future of CSS-in-JS](https://www.youtube.com/watch?v=75kmPj_iUOA)
 
 ## RUS
 
