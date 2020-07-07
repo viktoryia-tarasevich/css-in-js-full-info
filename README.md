@@ -7,12 +7,16 @@ During the preparation for a meetup, I've collected lots of interesting resource
 * [The tradeoffs of CSS-in-JS](https://medium.com/free-code-camp/the-tradeoffs-of-css-in-js-bee5cf926fdb)
 * [Stop using CSS in JavaScript for web development](https://medium.com/@gajus/stop-using-css-in-javascript-for-web-development-fa32fb873dcc)
 * [Announcing styled-components v5: Beast Mode 💪🔥](https://medium.com/styled-components/announcing-styled-components-v5-beast-mode-389747abd987)
+* [What's wrong with CSS-in-JS?](https://gomakethings.com/whats-wrong-with-css-in-js/)
+* [React styling](https://medium.com/@ntgard/react-styling-sucks-fc17b43084e6)
+* [Zero-runtime CSS from JS with Linaria](https://medium.com/call-stack/zero-runtime-css-from-js-with-linaria-443d8a6834ce)
 
 ## RUS
 
 * [Способы организации CSS-кода](https://habr.com/ru/post/256109/)
 * [Эволюция CSS: от CSS, SASS, BEM и CSS–модулей до styled-components](https://habr.com/ru/company/mailru/blog/319956/)
 * [Скрытая цена CSS-in-JS-библиотек в React-приложениях](https://habr.com/ru/company/ruvds/blog/480358/)
+* [CSS-in-JS — мифы и реальность](https://habr.com/ru/post/417707/)
 
 # Talks
 
@@ -38,10 +42,3 @@ During the preparation for a meetup, I've collected lots of interesting resource
 * [Reshadow](https://reshadow.dev/)
 * [Astroturf](https://github.com/4Catalyzer/astroturf)
 * [Compiled](https://compiledcssinjs.com/)
-
-## Css preprocessors
-
-* [LESS](http://lesscss.org/)
-* [SASS](https://sass-lang.com/)
-* [Stylus](https://stylus-lang.com/)
-* [PostCSS](https://postcss.org/)
