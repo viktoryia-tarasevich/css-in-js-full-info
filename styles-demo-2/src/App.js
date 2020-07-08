@@ -19,95 +19,53 @@ function getTable(max = 30) {
   return table;
 }
 
-
-
 function toPercent(x) {
   return (x * 100).toFixed(2).toString() + '%';
 }
 
-async function runTestRerender() {
-  const input = document.querySelector('input');
-  for (let i = 0; i < 10; i++) {
-    await new Promise(resolve => {
-      performance.mark('startRerender' + i);
-      input.click();
+const LIBS = ['React Only', 'Emotion', 'Styled Components', 'Linaria', 'Reshadow']
 
-      setTimeout(() => {
-        setTimeout(() => {
-          performance.mark('endRerender' + i);
-          performance.measure(
-            'measureRerender' + i,
-            'startRerender' + i,
-            'endRerender' + i
-          );
-          resolve();
-        }, 0);
-      }, 0);
-    });
+const listOfLibs = (lib, handleChange) => {
+
+  return LIBS.map(item=>
+    <label>
+      <input
+        type="radio"
+        value={item}
+        checked={lib === item}
+        onChange={()=>{
+          handleChange(item)
+        }}
+      />
+      {item}
+    </label>
+ )
+}
+
+const drawTable = (lib) => {
+  switch(lib) {
+    case 'React Only':
+      return <TableClean table={getTable()} toPercent={toPercent}/>;
+    case 'Emotion':
+      return <Table table={getTable()} toPercent={toPercent}/>;
+    case 'Styled Components':
+      return <TableSC table={getTable()} toPercent={toPercent}/>;
+    case 'Linaria':
+      return <TableLinaria table={getTable()} toPercent={toPercent}/>;
+    case 'Reshadow':
+      return <TableReshadow table={getTable()} toPercent={toPercent}/>;
+    default:
+      return <div></div>
   }
 }
 
-
-
 function App() {
-  const [runEmotion, setRunEmotion] = useState(false);
-  const [runCommon, setRunCommon] = useState(false);
-  const [runSc, setRunSC] = useState(false);
-  const [runLinaria, setRunLinaria] = useState(false);
-  const [runReshadow, setRunReshadow] = useState(false);
-
-  useEffect(() => {
-    const t0 = performance.now();
-    return () => {
-      const t1 = performance.now();
-      console.log(`Call took ${t1 - t0} milliseconds.`);
-    }
-  });
-
+  const [lib, setLib] = useState()
 
   return (
     <div className="App">
-       <button onClick={()=>{
-          setRunEmotion(!runEmotion)
-       }}>{`${!runEmotion? 'run emotion': 'clear emotion'}`}</button>
-       <button onClick={()=>{
-          setRunCommon(!runCommon)
-        }}>
-          run without libs
-        </button>
-        <button onClick={()=>{
-          setRunSC(!runSc)
-        }}>
-          run sc
-        </button>
-        <button onClick={()=>{
-          setRunLinaria(!runLinaria)
-        }}>
-          run linaria
-        </button>
-        <button onClick={()=>{
-          setRunReshadow(!runReshadow)
-        }}>
-          run reshadow
-        </button>
-        {/*
-          run with emotion
-        </button>
-        
-        {runEmotion && new Array(5000).fill(null).map((__, i) => (
-            <EmotionText key={i} name={'test' + i}></EmotionText>
-        ))}
-        {runCommon && new Array(5000).fill(null).map((__, i) => (
-            <CommonText key={i} name={'test' + i}></CommonText>
-        ))}
-       */}
-
-       
-       {runEmotion && <Table table={getTable()} toPercent={toPercent}></Table>} 
-       {runCommon && <TableClean table={getTable()} toPercent={toPercent}></TableClean>} 
-       {runSc && <TableSC table={getTable()} toPercent={toPercent}></TableSC>} 
-       {runLinaria && <TableLinaria table={getTable()} toPercent={toPercent}></TableLinaria>} 
-       {runReshadow && <TableReshadow table={getTable()} toPercent={toPercent}></TableReshadow>} 
+       {listOfLibs(lib, setLib)}
+       {drawTable(lib)}
     </div>
   );
 }
